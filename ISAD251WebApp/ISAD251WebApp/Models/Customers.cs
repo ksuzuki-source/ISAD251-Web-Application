@@ -12,8 +12,8 @@ namespace ISAD251WebApp.Models
             Orders = new HashSet<Orders>();
         }
 
-        public int ID { get; set; }
 
+        
         public int TableId { get; set; }
 
         public virtual ICollection<Orders> Orders { get; set; }

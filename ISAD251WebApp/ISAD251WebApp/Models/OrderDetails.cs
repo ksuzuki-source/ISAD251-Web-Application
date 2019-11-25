@@ -15,4 +15,4 @@ namespace ISAD251WebApp.Models
             public virtual Products Product { get; set; }
         }
     }
-}
+

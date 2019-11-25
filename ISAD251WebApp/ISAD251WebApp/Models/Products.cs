@@ -19,4 +19,4 @@ namespace ISAD251WebApp.Models
         public virtual ICollection<OrderDetails> OrderDetails { get; set; }
     }
 }
-}
+
