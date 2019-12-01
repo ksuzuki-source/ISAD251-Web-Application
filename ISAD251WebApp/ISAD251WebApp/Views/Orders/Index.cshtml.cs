@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using ISAD251WebApp.Models;
 
-namespace ISAD251WebApp.Views.Oeders
+namespace ISAD251WebApp.Views
 {
     public class IndexModel : PageModel
     {
@@ -22,8 +22,7 @@ namespace ISAD251WebApp.Views.Oeders
 
         public async Task OnGetAsync()
         {
-            Orders = await _context.Orders
-                .Include(o => o.Customer).ToListAsync();
+            Orders = await _context.Orders.ToListAsync();
         }
     }
 }

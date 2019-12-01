@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using ISAD251WebApp.Models;
 
-namespace ISAD251WebApp.Views.Oeders
+namespace ISAD251WebApp.Views
 {
     public class CreateModel : PageModel
     {
@@ -20,7 +20,6 @@ namespace ISAD251WebApp.Views.Oeders
 
         public IActionResult OnGet()
         {
-        ViewData["TableId"] = new SelectList(_context.Customers, "TableId", "TableId");
             return Page();
         }
 

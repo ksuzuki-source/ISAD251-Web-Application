@@ -1,5 +1,5 @@
 ﻿@page
-@model ISAD251WebApp.Views.Oeders.DetailsModel
+@model ISAD251WebApp.Views.DetailsModel
 
 @{
     ViewData["Title"] = "Details";
@@ -16,12 +16,6 @@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Orders.OrderDate)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Orders.Customer)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Orders.Customer.TableId)
         </dd>
     </dl>
 </div>

@@ -1,5 +1,5 @@
 ﻿@page
-@model ISAD251WebApp.Views.Oeders.EditModel
+@model ISAD251WebApp.Views.EditModel
 
 @{
     ViewData["Title"] = "Edit";
@@ -18,11 +18,6 @@
                 <label asp-for="Orders.OrderDate" class="control-label"></label>
                 <input asp-for="Orders.OrderDate" class="form-control" />
                 <span asp-validation-for="Orders.OrderDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Orders.TableId" class="control-label"></label>
-                <select asp-for="Orders.TableId" class="form-control" asp-items="ViewBag.TableId"></select>
-                <span asp-validation-for="Orders.TableId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

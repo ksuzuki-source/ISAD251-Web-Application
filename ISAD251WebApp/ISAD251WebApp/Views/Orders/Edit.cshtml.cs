@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ISAD251WebApp.Models;
 
-namespace ISAD251WebApp.Views.Oeders
+namespace ISAD251WebApp.Views
 {
     public class EditModel : PageModel
     {
@@ -29,14 +29,12 @@ namespace ISAD251WebApp.Views.Oeders
                 return NotFound();
             }
 
-            Orders = await _context.Orders
-                .Include(o => o.Customer).FirstOrDefaultAsync(m => m.OrderId == id);
+            Orders = await _context.Orders.FirstOrDefaultAsync(m => m.OrderId == id);
 
             if (Orders == null)
             {
                 return NotFound();
             }
-           ViewData["TableId"] = new SelectList(_context.Customers, "TableId", "TableId");
             return Page();
         }
 

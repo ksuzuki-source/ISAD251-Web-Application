@@ -9,8 +9,6 @@ namespace ISAD251WebApp.Models
     {
         public int OrderId { get; set; }
         public DateTime OrderDate { get; set; }
-        public int? TableId { get; set; }
 
-        public virtual Customers Customer { get; set; }
     }
 }

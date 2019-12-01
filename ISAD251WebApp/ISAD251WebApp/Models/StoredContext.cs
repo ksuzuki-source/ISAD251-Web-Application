@@ -22,7 +22,6 @@ namespace ISAD251WebApp.Models
         : base(options)
         { }
 
-        public virtual DbSet<Customers> Customers { get; set; }
         public virtual DbSet<Orders> Orders { get; set; }
 
         public virtual DbSet<OrderDetails> OrderDetails { get; set; }
@@ -36,17 +35,7 @@ namespace ISAD251WebApp.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Customers>(entity =>
-            {
-                entity.HasKey(e => e.TableId)
-                    .HasName("PK_Customers");
-
-                entity.ToTable("customers");
-
-                entity.Property(e => e.TableId).HasColumnName("customerId");
-            });
-
-
+           
 
             modelBuilder.Entity<OrderDetails>(entity =>
             {
@@ -72,10 +61,6 @@ namespace ISAD251WebApp.Models
 
                 entity.Property(e => e.OrderDate).HasColumnType("date");
 
-                entity.HasOne(d => d.Customer)
-                    .WithMany(p => p.Orders)
-                    .HasForeignKey(d => d.TableId)
-                    .HasConstraintName("fk_Customers");
             });
 
             modelBuilder.Entity<Products>(entity =>
